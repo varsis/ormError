@@ -21,7 +21,7 @@ var Article = db.define('article', {
 
 var SubArticle = db.models.subarticle;
 Article.hasOne('main',SubArticle,{});
-Article.hasMany('subarticles',SubArticle,{},{
+/*Article.hasMany('subarticles',SubArticle,{},{
     reverse:'parent'
-});
+});*/
 Article.sync();

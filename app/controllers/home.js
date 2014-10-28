@@ -21,27 +21,25 @@ exports.index = function(req, res) {
             })
             console.log('setMain');
             article.setMain(subarticle,function(err){
-            console.log('saving sub article');
-            article.addSubarticles(subarticle, function(err) {
-                console.log('DONE SAVING');
+            console.log('after set main');
+            //article.addSubarticles(subarticle, function(err) {
 
-                article.addSubarticles(new SubArticle({
-                    title: 'asdf',
-                    url: 'asdfasd',
-                    text: 'some text'
-                }), function(err) {
+               // article.addSubarticles(new SubArticle({
+             //       title: 'asdf',
+              //      url: 'asdfasd',
+             //       text: 'some text'
+             //   }), function(err) {
 
-                    console.log('save sub 2');
                     if (err) throw new Error(err);
                     res.render('home/index', {
                         title: 'Generator-Express MVC',
                         articles: articles
                     });
-
-                })
-
-
-            });
+//
+             //   })
+//
+//
+            //});
         });
         });
     });
